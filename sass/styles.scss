@@ -1,0 +1,1599 @@
+/*
+    File Contents:
+
+        1. Variables
+        2. Mixins
+        3. Global Styles
+        4. Lead Styles
+        5. About Styles
+        6. Experience Styles
+        7. Education Styles
+        8. Project Styles
+        9. Skills Styles
+        10. Contact Styles
+        11. Optional Section Styles
+        12. CSS Animation Snippets
+		13. Media Queries
+*/
+
+/*
+    ------------------------
+    ----- 1. Variables -----
+    ------------------------
+*/
+
+
+@font-face {
+    font-family: 'brlnsdb';
+    src: url('../fonts/brlnsdb.woff2') format('woff2'),
+         url('../fonts/brlnsdb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$main-font: 'brlnsdb';
+$secondary-font: lato;
+
+// Define base and accent colors
+$base-color:#000000;
+$base-color-hover: darken($base-color, 20%);
+
+// Define background colors
+$background:#2f90a7;
+$background-alt: #ffffff;
+$background-comp:#a01810;
+$background-comp-2: #a01810;
+$background-comp-3: #2f90a7;
+$background-light: lighten($background, 20%);
+$background-other: dodgerblue;
+
+// Define border colors
+$border: #000000;
+$border-two: #FFFFFF;
+
+// Define text colors
+$heading: #000;
+$text: #000;
+$subtitle: #fff;
+$social: #000000;
+
+// Define border radius
+$oval: 5px;
+
+/*
+    ---------------------
+    ----- 2. Mixins -----
+    ---------------------
+*/
+
+@mixin transition($duration: 0.5s, $func: ease, $property: all) {
+    transition: #{$duration} #{$func} #{$property};
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+/*
+    ----------------------------
+    ----- 3. Global Styles -----
+    ----------------------------
+*/
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+	background-color: $border;
+
+    &.active {
+        overflow: hidden;
+        z-index: -1;
+    }
+}
+
+.separate {
+	width: 100%;
+	border: 5px outset $border;	
+}
+
+.container {
+	width: 100%;
+}
+
+// No JS styles
+.no-js {
+    #experience-timeline {
+        > div {
+            background: $background;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid $border;
+
+            h3 {
+                font-size: 1.5em;
+                font-weight: 300;
+                color: $heading;
+                display: inline-block;
+                margin: 0;
+            }
+
+            h4 {
+                font-size: 1.2em;
+                font-weight: 300;
+                color: #ffffff;
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                color: $text;
+                font-size: 0.9em;
+                margin: 0;
+            }
+        }
+
+        &:before, &:after {
+            content: none;
+        }
+    }
+}
+
+@keyframes dropHeader {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 0.75s;
+
+    ul {
+		border:5px outset #5C5C5C;
+		border-radius:20px;
+        display: inline-block;
+		font-family: $main-font;
+		font-size:1.25em;
+        background: #000000;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        color: $subtitle;
+        padding: 10px;
+
+        &:hover {
+            color: $base-color-hover;
+            text-decoration: none;
+            background: #eee;
+            border-radius: 4px;
+        }
+
+        &:focus {
+            color: $subtitle;
+            text-decoration: none;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+
+    &.sticky {
+        position: fixed;
+        z-index: 999;
+    }
+}
+
+#menu {
+    &.active {
+        display: block;
+    }
+}
+
+#mobile-menu-open {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    top: 10px;
+    color: $subtitle;
+    font-size: 1.5em;
+    z-index: 20;
+    padding: 0 7px;
+    border-radius: 4px;
+    background: $background;
+}
+
+#mobile-menu-close {
+    display: none;
+    text-align: right;
+    width: 100%;
+    background: $background;
+    font-size: 1.5em;
+    padding-right: 15px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: $subtitle;
+
+    span {
+        font-size: 0.5em;
+        text-transform: uppercase;
+    }
+
+    i {
+        vertical-align: middle;
+    }
+}
+
+footer {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+    padding: 50px 0;
+	background-color: #fff;
+}
+
+.content-wrap {
+  padding-bottom: 80px;    /* Footer height */
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.copyright {
+    padding-top: 15px;
+
+    p {
+        margin: 0;
+        color: $subtitle;
+    }
+}
+
+.top {
+    text-align: center;
+
+    span {
+        cursor: pointer;
+        display: block;
+        margin: 15px auto 0 auto;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 3px solid $background-comp-2;
+        text-align:center;
+    }
+
+    i {
+        color: $background-comp-2;
+    }
+}
+
+.stackicon {
+	background: none;
+}
+
+.stackicon:hover {
+	background:#3DFF12;
+}
+.social {
+    text-align: right;
+
+    ul {
+        margin: 5px 0 0 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1.25em;
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        color: $social;
+        padding: 10px;
+
+        &:hover {
+            color: #28FF07;
+        }
+    }
+}
+
+.layer {
+    background-color: rgba(0,0,0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-rounded-white {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 25px;
+    border: 3px solid #fff;
+    border-radius: 30px;
+    @include transition();
+
+    &:hover {
+        color: $base-color;
+        background: #fff;
+        text-decoration: none;
+    }
+}
+
+.shadow {
+    box-shadow: 10px 10px $background-comp-3;
+}
+
+.shadow-large {
+    box-shadow:-10px 10px #039dfc;
+}
+
+.heading {
+    position: relative;
+    display: inline-block;
+	font-family: $main-font;
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0 100px 30px 0;
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 100%;
+        height: 1px;
+        width: 50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: $base-color;
+    }
+}
+
+.background-alt {
+    background: $background-alt;
+}
+
+/*
+    --------------------------
+    ----- 4. Lead Styles -----
+    --------------------------
+*/
+
+#lead {
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
+    background-image: url("../images/web-design-blog.png");
+    background-size: cover;
+    padding: 15px;
+    overflow: hidden;
+}
+
+#lead-content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    h1 {
+        color: $subtitle;
+        font-family: $main-font;
+		font-weight: 900;
+        font-size: 4em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        line-height: 0.9em;
+    }
+
+    h2 {
+        color: $subtitle;
+		font-family: $main-font;
+        font-weight: 500;
+        font-size: 2.25em;
+        margin-bottom: 15px;
+    }
+}
+
+#lead-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba($base-color-hover, 0.5);
+    z-index: 1;
+}
+
+#lead-down {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    bottom: 15px;
+    color: #fff;
+
+    span {
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 3px solid lighten($base-color, 25%);
+        text-align:center;
+    }
+
+    i {
+        animation: pulsate 1.5s ease;
+        animation-iteration-count: infinite;
+        padding-top: 5px;;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/*
+    ---------------------------
+    ----- 5. About Styles -----
+    ---------------------------
+*/
+
+#about {
+	background-image: url('../images/about.png');
+	background-size:cover; 
+	background-repeat: no-repeat;
+    background-position:top left;
+	padding: 6px 15px;
+
+    h2 {
+        color: $heading;
+
+    }
+
+    p {
+        color: $text;
+        margin: 0;
+    }
+}
+
+#abtimg {
+	margin-top:10%;
+	margin-left:5%;
+	margin-right:10%;
+	width: 100%;
+	height:auto;
+}
+
+/*
+    --------------------------------
+    ----- 6. Experience Styles -----
+    --------------------------------
+*/
+
+#experience {
+	background-image: url('../images/experience.png');
+	background-size:contain; 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: $background-alt;
+    padding: 50px 15px;
+    text-align: center;
+
+    h2 {
+        color: #FFFFFF;
+    }
+}
+
+#experience-timeline {
+    margin: 30px auto 0 auto;
+    position: relative;
+    max-width: 1250px;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 303px;
+        right: auto;
+        height: 100%;
+        width: 6px;
+        background: $border;
+        z-index: 0;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 6px;
+        height: 40px;
+        background: $border;
+        background: linear-gradient(to bottom, $border, rgba($subtitle, 0));
+        top: 100%;
+        left: 303px;
+    }
+}
+
+.vtimeline-content {
+    margin-left: 350px;
+    background: #000;
+    border: 1px solid #fff;
+    padding: 25px;
+    border-radius:$oval;
+	box-shadow: 15px 15px 10px #000;
+    text-align: left;
+
+    h3 {
+        font-size: 1.5em;
+		font-family: $main-font;
+        font-weight: 300;
+		text-align:center;
+        color: $subtitle;
+        display: inline-block;
+        margin: 0;
+    }
+
+    h4 {
+		font-family: $main-font;
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #FFFFFF;
+        margin: 0 0 15px 0;
+    }
+
+    p {
+        color: $subtitle;
+        font-size: 0.9em;
+        margin: 0;
+    }
+	
+	li {
+		color: $subtitle;
+	}
+}
+
+.vtimeline-point {
+    position: relative;
+    display: block;
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+
+.vtimeline-icon {
+    position: relative;
+    color: $background-alt;
+    width: 50px;
+    height: 50px;
+    background: $border;
+    border-radius: 50%;
+    float: left;
+    z-index: 99;
+    margin-left: 280px;
+
+    i {
+        display: block;
+        font-size: 2em;
+        margin-top: 10px;
+    }
+}
+
+.vtimeline-date {
+    width: 200px;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    top: 10px;
+	font-family:$main-font;
+    font-weight: bolder;
+    color: $subtitle;
+}
+
+/*
+    -------------------------------
+    ----- 7. Education Styles -----
+    -------------------------------
+*/
+
+#education {
+	background-image:url('../images/education.png'); 
+	background-size:contain; 
+	background-repeat: no-repeat;
+    padding: 50px 15px 20px 15px;
+    text-align: center;
+
+    h2 {
+        color: $heading;
+        margin-bottom: 50px;
+    }
+}
+
+.education-block {
+    max-width: 450px;
+    margin: 0 auto 30px 100px;
+	background-color: $background-comp-3;
+    padding: 25px;
+    border: 1px solid $border-two;
+	border-radius: $oval;
+	box-shadow:10px 10px 5px black;
+    text-align: left;
+
+    h3 {
+        font-weight: 500;
+        float: left;
+        margin: 0;
+        color: $heading;
+    }
+
+    span {
+        color: $subtitle;
+        float: right;
+    }
+
+    h4 {
+        color: $subtitle;
+        clear: both;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+
+    p, ul {
+        margin: 0;
+        color: $subtitle;
+        font-size: 0.9em;
+    }
+
+    ul {
+        padding: 0 0 0 15px;
+    }
+}
+
+/*
+    -------------------------------
+    ----- 8. Project Styles -----
+    -------------------------------
+*/
+
+#projects {
+    padding: 100px 15px;
+    text-align: center;
+	background-image:url("../images/projects.png"); 
+	background-size:contain;
+	background-position: top center;
+	background-repeat: no-repeat;
+    h2 {
+        color: $subtitle;
+        margin-bottom: 50px;
+    }
+}
+
+.project {
+    position: relative;
+    max-width: 999px;
+    margin: 0 auto 30px -200px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: $oval;
+}
+
+.project-image {
+	border: 1px $border solid;
+    float: left;
+	border-bottom-left-radius: $oval;
+	border-top-left-radius: $oval;
+}
+
+.project-image img {
+	width:300px;
+	height:auto;
+}
+
+.project-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 300px;
+    padding: 45px;
+	border-radius:$oval;
+
+    h3 {
+        font-size: 1.3em;
+        font-weight: 400;
+        color: $heading;
+        margin: 0 0 15px 0;
+    }
+
+    p {
+        color: $text;
+        margin: 0 0 15px 0;
+        font-size: 0.7em;
+    }
+}
+
+.no-image {
+    .project-info {
+        position: relative;
+        margin: 0;
+        padding: 30px 15px;
+        transform: none;
+    }
+}
+
+#more-projects {
+    display: none;
+}
+
+/*
+    -------------------------------
+    ----- 9. Skills Styles -----
+    -------------------------------
+*/
+
+#skills {
+    padding: 50px 10px;
+	width:100%;
+    text-align: center;
+	background-color: $subtitle;
+	background-image:url("../images/skills.png"); 
+	background-size: contain; 
+	background-position: top right;
+	background-repeat:no-repeat;
+
+    h2 {
+        color: $heading;
+        margin-bottom: 50px;
+    }
+
+    ul {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 800px;
+    }
+
+    li {
+        display: inline-block;
+        margin: 7px;
+        padding: 5px 10px;
+        color: $subtitle;
+        background: $background-comp;
+        list-style: none;
+		border-radius:$oval;
+        cursor: default;
+        font-size: 1.2em;
+    }
+}
+
+/*
+    -------------------------------
+    ----- 10. Contact Styles -----
+    -------------------------------
+*/
+
+#contact {
+    padding: 50px 15px;
+    background-color: $background-comp-2;
+	background-image:url("../images/contact.png");
+	background-size:contain;
+	background-position: top center;
+	background-repeat:no-repeat;
+    text-align: center;
+
+	h1 {
+		margin-top:20%;
+	}
+    h2 {
+        margin: 50px 0 15px 0;
+        color: #fff;
+        font-weight: 500;
+    }
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+
+    input, textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 2px $subtitle solid;
+        margin-bottom: 10px;
+        background: darken($base-color, 15%);
+        color: #fff;
+        @include transition();
+        @include placeholder {
+            color: #fff;
+        }
+
+        &:focus {
+            outline: none;
+            background: darken($base-color, 25%);
+        }
+    }
+
+    textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        background: #fff;
+        border-radius: 4px;
+        padding: 5px 10px;
+        border: none;
+        color: $base-color;
+        font-weight: 700;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        @include transition();
+
+        &:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+    }
+}
+
+/*
+    ---------------------------------------
+    ----- 11. Optional Section Styles -----
+    ---------------------------------------
+*/
+
+.optional-section {
+    padding: 50px 15px;
+    text-align: center;
+    border-top: 1px solid $border;
+
+    h2 {
+        color: $heading;
+    }
+}
+
+.optional-section-block {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    border: 1px solid $border;
+    background: #fff;
+    text-align: left;
+
+    h3 {
+        font-weight: 500;
+        margin: 0 0 15px 0;
+        color: $heading;
+    }
+
+    h4 {
+        color: $text;
+        clear: both;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+
+    p, ul {
+        margin: 0 0 15px 0;
+        color: $text;
+        font-size: 0.9em;
+    }
+
+    ul {
+        padding: 0 0 0 15px;
+    }
+}
+
+/*
+    ---------------------------------------
+    ----- 12. CSS Animation Snippets  -----
+    ---------------------------------------
+*/
+.row {
+	margin-left:0;
+	max-width: 1450px;
+	padding: 10px;
+}
+.card-container {
+  cursor: pointer;
+  display: inline-block;
+  height: 240px;
+  perspective: 600;
+  position: relative;
+  width: 460px;
+}
+.card {
+ width: 460px;
+ height: auto;
+ position: absolute;
+ transform-style: preserve-3d;
+ transition: all 1.5s ease-in-out;
+ -webkit-transition: all 1.5s ease-in-out; // Safari and Chrome
+}
+
+.card img {
+	width:460px;
+	height:240px;
+	border: 10px outset $subtitle;
+	border-radius:20px;
+}
+.card:hover {
+  transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg); /* IE9 */
+  -webkit-transform: rotateY(180deg); /* Safari */
+}
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  position: absolute;
+  overflow: hidden;
+  width: 460px;
+	height: 240px;
+}
+.card .back {
+  background-color:#000000;
+  color: white;
+  padding: 20px;
+  line-height: 14px;
+  text-align: center;
+  transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg); // IE9
+  -webkit-transform: rotateY(180deg); // Safari
+}
+
+.card .back{
+	h4{
+		font-size: 1.5em;
+		margin-bottom:-2%;
+		color:white;
+		font-family: $secondary-font;
+	}
+	p {
+		font-size:0.9em;
+		color:white;
+		margin-bottom: -1%;
+		font-family: $secondary-font;
+	}
+	
+	a {
+		color:red;
+		font-size: 1.1em;
+		font-family: $main-font;
+		
+	}
+	
+	strong {
+		color:orangered;
+		font-weight: bolder;
+	}
+	
+	p.icons {
+		margin-top:5px;
+		padding:10px;
+		margin-bottom:15px;
+		font-size:2.8em;
+	}
+}
+
+/*
+    -----------------------------
+    ----- 13. Media Queries -----
+    -----------------------------
+*/
+
+@media only screen and (min-width: 993px) {
+	
+	.social {
+		ul{
+		margin-right: 40%;
+	}
+	}
+	
+	#about h1 {
+		display:none;
+	}
+	
+	#experience h1 {
+		display: none;
+	}
+	
+	#education h1 {
+		display:none;
+	}
+	
+	#projects h1 {
+		display:none;
+	}
+	
+	#skills h1 {
+		display: none;
+	}
+	
+	#contact h1 {
+		display:none;
+	}
+}
+
+// Collapse timeline
+@media only screen and (max-width: 750px) {
+
+    #experience-timeline {
+        &:before, &:after {
+            left: 23px;
+        }
+
+    }
+	
+	
+
+    .vtimeline-date {
+        width: auto;
+        text-align: left;
+        position: relative;
+        margin-bottom: 15px;
+        display: block;
+        margin-left: 40px;
+    }
+
+    .vtimeline-icon {
+        margin-left: 0;
+    }
+
+    .vtimeline-content {
+		margin-right:30px;
+        margin-left: 40px;
+    }
+
+}
+
+// Medium Devices
+@media only screen and (max-width : 992px) {
+	.container {
+		width:100%;
+	}
+	
+	.jon {
+		margin-top:10%;
+		width: 400px;
+		height:auto;
+}
+	
+	#experience-timeline {
+		width:100%;
+	}
+	
+	.education-block {
+		max-width:992px;
+		width:100%;
+		margin-right:40px;
+		left:0;
+	}
+	
+	.row {
+		width: 100%;
+		max-width:992px;
+	}
+	
+    #lead {
+        height: auto;
+        min-height: auto;
+        max-height: auto;
+        padding: 100px 15px;
+    }
+
+    #lead-content {
+        width:100%;
+        position: relative;
+        transform: none;
+        left: auto;
+        top: auto;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+        }
+    }
+	
+	#projects {
+		width:auto;
+		background-image: none;
+		background-color: $background-comp;
+	}
+	
+	
+	#contact {
+		margin-top:5%;
+		margin-bottom:10%;
+		width:auto;
+		background-image: none;
+		background-color: $background-comp;
+	
+	}
+	
+    #skills {
+		width:100%;
+		background-image:none;
+		background-color: $subtitle;		
+	}
+	
+	#experience {
+		width:auto;
+		background-image: none;
+		background-color: $background-comp;
+	}
+	
+	
+	#education {
+		width:auto;
+		background-image: none;
+		background-color: $subtitle;
+	
+	}
+	
+    #about {
+		margin-left: 0px;
+		width:auto;
+		background-image:none;
+		background-color: $subtitle;
+        text-align: center;
+
+        p {
+			left:0;
+            text-align: left;
+        }
+    }
+
+	#about h1 {
+		color: $background-comp;
+	}
+	
+	#experience h1 {
+		color: #FFFFFF;
+	}
+	
+	#education h1 {
+		color: $background-comp;
+	}
+	
+	#projects h1 {
+		color: #FFFFFF;
+	}
+	
+	#skills h1 {
+		color: $background-comp;
+	}
+	
+	#contact h1 {
+		color: #FFFFFF;
+	}
+	
+	
+}
+
+// Small Devices
+@media only screen and (max-width : 768px) {
+.jon {
+	margin-top:10%;
+	width: 300px;
+	height:auto;
+}
+	
+    header {
+        position: fixed;
+        display: none;
+        z-index: 999;
+        animation: none;
+        bottom: 0;
+        height: 100%;
+    }
+
+    #mobile-menu-open, #mobile-menu-close {
+        display: block;
+    }
+
+    #menu {
+        height: 100%;
+        overflow-y: auto;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+
+        li {
+            display: block;
+            margin-bottom: 10px;
+        }
+		
+		a {
+			font-variant: small-caps;
+		}
+    }
+
+    #lead-content{
+        width: 100%;
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+        }
+
+        a {
+            padding: 10px 20px;
+        }
+    }
+
+    #lead-down {
+        display: none;
+    }
+	
+	#education {
+		background-image: none;
+		background-color: #FFFFFF;
+	
+	}
+	
+	#contact {
+		margin-top:10%;
+	}
+
+    .education-block{
+		margin-left:0px;
+		
+        h3, span {
+            float: none;
+        }
+    }
+	
+	footer {
+		max-height: 200px;
+	}
+	
+	.content-wrap {
+		padding-bottom: 200px;
+	}
+	
+	.row {
+        margin-left:0;
+        width:auto;
+		margin-bottom:10%;
+        padding: 10px;
+    }
+    .card-container {
+      cursor: pointer;
+      display: inline-block;
+      perspective: 600;
+      position: relative;
+      width: 400px;
+    }
+    .card {
+      width: 400px;
+		height:204px;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: all 1.5s ease-in-out;
+      -webkit-transition: all 1.5s ease-in-out; // Safari and Chrome
+    }
+	
+	.card img {
+	width:400px;
+	height:204px;
+	border: 10px outset $subtitle;
+	border-radius:20px;
+}
+    .card:hover {
+      transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg); // IE9
+      -webkit-transform: rotateY(180deg); // Safari
+    }
+    .card .side {
+      backface-visibility: hidden;
+      border-radius: 6px;
+      position: absolute;
+      overflow: hidden;
+      width: 400px;
+    }
+    .card .back {
+      background:#000000;
+      color: white;
+      padding: 20px;
+      line-height: 14px;
+      text-align: center;
+      transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg); // IE9
+      -webkit-transform: rotateY(180deg); // Safari
+    }
+    
+    .card .back{
+        h4{
+            font-size: 1.5em;
+            margin-bottom:-2%;
+            color:white;
+            font-family: $secondary-font;
+        }
+        p {
+            font-size:0.9em;
+            color:white;
+            margin-bottom: -1%;
+            font-family: $secondary-font;
+        }
+        
+        a {
+            color:red;
+            font-size: 1.1em;
+            font-family: $main-font;
+            
+        }
+
+    footer {
+        height:150px;
+        width:100%;
+        text-align: center;
+    }
+
+    .social {
+        text-align: center;
+    }
+
+}
+}
+
+// Extra Small Devices
+@media only screen and (max-width : 480px) {
+	
+	#projects {
+    padding: 50px 15px;
+    text-align: center;
+	background-color: $background-alt;
+	background-image: none;
+	}
+	
+	.social ul {
+		margin: 5px 50px 0 0;
+	}
+    .jon {
+	margin-top:10%;
+	width: 200px;
+	height:auto;
+}
+	
+	.row {
+        margin-left:0;
+        padding: 10px;
+    }
+    .card-container {
+      cursor: pointer;
+      display: inline-block;
+      perspective: 600;
+      position: relative;
+      width: 200px;
+    }
+    .card {
+      width: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: all 1.5s ease-in-out;
+      -webkit-transition: all 1.5s ease-in-out; // Safari and Chrome
+    }
+	
+	.card img {
+	width:200px;
+	height:104px;
+	border: 10px outset $subtitle;
+	border-radius:20px;
+}
+	
+	.card:hover {
+      transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg); // IE9
+      -webkit-transform: rotateY(180deg); // Safari
+    }
+    .card .side {
+      backface-visibility: hidden;
+      border-radius: 6px;
+      position: absolute;
+      overflow: hidden;
+      width: 200px;
+	  height:104px;
+    }
+    .card .back {
+      background-color:#000000;
+      color: white;
+      padding: 20px;
+      line-height: 14px;
+      text-align: center;
+      transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg); // IE9
+      -webkit-transform: rotateY(180deg); // Safari
+    }
+    
+    .card .back{
+        h4{
+            font-size: 1.5em;
+            margin-bottom:-2%;
+            color:white;
+            font-family: $secondary-font;
+        }
+        p {
+            font-size:0.9em;
+			color:white;
+            margin-bottom: -1%;
+            font-family: $secondary-font;
+        }
+        
+        a {
+            color:red;
+            font-size: 1.1em;
+            font-family: $main-font;
+            
+        }
+	}
+	
+    #lead-content {
+        h1 {
+            font-size: 1.5em;
+			margin-right: 10px;
+			margin-left:10px;
+			width:100%;
+        }
+
+        h2 {
+            font-size: 1em;
+        	margin-right: 10px;
+			margin-left:10px;
+			width:100%;
+        }
+
+        a {
+            font-size: 0.9em;
+            padding: 5px 10px;
+        }
+    }
+}
+
+@media only screen and (max-width : 375px) {
+		.row {
+        margin-left:0;
+			width: 100%;
+        padding: 0px;
+    }
+    .card-container {
+      cursor: pointer;
+      display: inline-table;
+      perspective: 600;
+      position: relative;
+      width: 200px;
+		margin-bottom:-140px;
+    }
+    .card {
+      width: auto;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: all 1s ease-in-out;
+      -webkit-transition: all 1s ease-in-out; // Safari and Chrome
+    }
+	
+	.card img {
+	width:200px;
+	height:104px;
+	border: 5px outset $subtitle;
+	border-radius:10px;
+}
+	
+	.card:hover {
+      transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg); // IE9
+      -webkit-transform: rotateY(180deg); // Safari
+    }
+    .card .side {
+      backface-visibility: hidden;
+      border-radius: 6px;
+      position: absolute;
+      overflow: hidden;
+      width: 200px;
+	  height:104px;
+    }
+    .card .back {
+      background-color:#000000;
+      color: white;
+      padding: 20px;
+      line-height: 14px;
+      text-align: center;
+      transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg); // IE9
+      -webkit-transform: rotateY(180deg); // Safari
+    }
+    
+    .card .back{
+        h4{
+            font-size: 1.5em;
+            margin-bottom:-2%;
+            color:white;
+            font-family: $secondary-font;
+        }
+        p {
+            font-size:0.9em;
+			color:white;
+            margin-bottom: -1%;
+            font-family: $secondary-font;
+        }
+        
+        a {
+            color:red;
+            font-size: 1.1em;
+            font-family: $main-font;
+            
+        }
+	}
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="_animated.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607229962" remote="131693638800000000" Dst="2" />
+<file name="_bordered-pulled.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607386254" remote="131693638800000000" Dst="2" />
+<file name="_core.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607386254" remote="131693638800000000" Dst="2" />
+<file name="_fixed-width.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607386254" remote="131693638800000000" Dst="2" />
+<file name="_icons.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607542522" remote="131693638800000000" Dst="2" />
+<file name="_larger.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607542522" remote="131693638800000000" Dst="2" />
+<file name="_list.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607698787" remote="131693638800000000" Dst="2" />
+<file name="_mixins.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607698787" remote="131693638800000000" Dst="2" />
+<file name="_path.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607698787" remote="131693638800000000" Dst="2" />
+<file name="_rotated-flipped.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607855055" remote="131693638800000000" Dst="2" />
+<file name="_screen-reader.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607855055" remote="131693638800000000" Dst="2" />
+<file name="_stacked.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293607855055" remote="131693638800000000" Dst="2" />
+<file name="_variables.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293608011320" remote="131693638800000000" Dst="2" />
+<file name="font-awesome.scss" server="ftp.jsobie03.com/public_html/SobierPortfolio/" local="131667293608011320" remote="131693638800000000" Dst="2" />
+<file name="font-awesome.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293608011320" remote="131695020600000000" Dst="2" />
+<file name="_variables.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293608011320" remote="131695020600000000" Dst="2" />
+<file name="_stacked.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607855055" remote="131695020600000000" Dst="2" />
+<file name="_screen-reader.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607855055" remote="131695020600000000" Dst="2" />
+<file name="_rotated-flipped.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607855055" remote="131695020600000000" Dst="2" />
+<file name="_path.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607698787" remote="131695020600000000" Dst="2" />
+<file name="_mixins.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607698787" remote="131695020600000000" Dst="2" />
+<file name="_list.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607698787" remote="131695020600000000" Dst="2" />
+<file name="_larger.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607542522" remote="131695020600000000" Dst="2" />
+<file name="_icons.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607542522" remote="131695020600000000" Dst="2" />
+<file name="_fixed-width.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607386254" remote="131695020600000000" Dst="2" />
+<file name="_core.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607386254" remote="131695020600000000" Dst="2" />
+<file name="_bordered-pulled.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607386254" remote="131695020600000000" Dst="2" />
+<file name="_animated.scss" server="ftp.jsobie03.com/public_html/Portfolio/" local="131667293607229962" remote="131695020600000000" Dst="2" />
+<file name="_animated.scss" server="ftp.jonsobier.com/public_html/" local="131667293607229962" remote="131793837000000000" Dst="2" />
+<file name="_bordered-pulled.scss" server="ftp.jonsobier.com/public_html/" local="131667293607386254" remote="131793837000000000" Dst="2" />
+<file name="_core.scss" server="ftp.jonsobier.com/public_html/" local="131667293607386254" remote="131793837000000000" Dst="2" />
+<file name="_fixed-width.scss" server="ftp.jonsobier.com/public_html/" local="131667293607386254" remote="131793837000000000" Dst="2" />
+<file name="_icons.scss" server="ftp.jonsobier.com/public_html/" local="131667293607542522" remote="131793837000000000" Dst="2" />
+<file name="_larger.scss" server="ftp.jonsobier.com/public_html/" local="131667293607542522" remote="131793837000000000" Dst="2" />
+<file name="_list.scss" server="ftp.jonsobier.com/public_html/" local="131667293607698787" remote="131793837000000000" Dst="2" />
+<file name="_mixins.scss" server="ftp.jonsobier.com/public_html/" local="131667293607698787" remote="131793837000000000" Dst="2" />
+<file name="_path.scss" server="ftp.jonsobier.com/public_html/" local="131667293607698787" remote="131793837000000000" Dst="2" />
+<file name="_rotated-flipped.scss" server="ftp.jonsobier.com/public_html/" local="131667293607855055" remote="131793837000000000" Dst="2" />
+<file name="_screen-reader.scss" server="ftp.jonsobier.com/public_html/" local="131667293607855055" remote="131793837000000000" Dst="2" />
+<file name="_stacked.scss" server="ftp.jonsobier.com/public_html/" local="131667293607855055" remote="131793837000000000" Dst="2" />
+<file name="_variables.scss" server="ftp.jonsobier.com/public_html/" local="131667293608011320" remote="131793837000000000" Dst="2" />
+<file name="font-awesome.scss" server="ftp.jonsobier.com/public_html/" local="131667293608011320" remote="131793837000000000" Dst="2" />
+</dwsync>

@@ -1,0 +1,1433 @@
+/*
+    File Contents:
+
+        1. Variables
+        2. Mixins
+        3. Global Styles
+        4. Lead Styles
+        5. About Styles
+        6. Experience Styles
+        7. Education Styles
+        8. Project Styles
+        9. Skills Styles
+        10. Contact Styles
+        11. Optional Section Styles
+        12. CSS Animation Snippets
+		13. Media Queries
+*/
+/*
+    ------------------------
+    ----- 1. Variables -----
+    ------------------------
+*/
+@font-face {
+  font-family: 'brlnsdb';
+  src: url("../fonts/brlnsdb.woff2") format("woff2"), url("../fonts/brlnsdb.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+/*
+    ---------------------
+    ----- 2. Mixins -----
+    ---------------------
+*/
+/*
+    ----------------------------
+    ----- 3. Global Styles -----
+    ----------------------------
+*/
+/* line 101, portfolio/sass/styles.scss */
+body {
+width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  background-color: #000000; }
+  /* line 106, portfolio/sass/styles.scss */
+  body.active {
+    overflow: hidden;
+    z-index: -1; }
+
+/* line 112, portfolio/sass/styles.scss */
+.separate {
+  width: 100%;
+  border: 5px solid #FFFFFF;}
+
+/* line 117, portfolio/sass/styles.scss */
+.container {
+  width: 100%; }
+
+/* line 124, portfolio/sass/styles.scss */
+.no-js #experience-timeline > div {
+  background: #2f90a7;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000; }
+  /* line 130, portfolio/sass/styles.scss */
+  .no-js #experience-timeline > div h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #000;
+    display: inline-block;
+    margin: 0; }
+  /* line 138, portfolio/sass/styles.scss */
+  .no-js #experience-timeline > div h4 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0 0 15px 0; }
+  /* line 145, portfolio/sass/styles.scss */
+  .no-js #experience-timeline > div p {
+    color: #000;
+    font-size: 0.9em;
+    margin: 0; }
+/* line 152, portfolio/sass/styles.scss */
+.no-js #experience-timeline:before, .no-js #experience-timeline:after {
+  content: none; }
+
+@keyframes dropHeader {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0); } }
+/* line 167, portfolio/sass/styles.scss */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+  animation-name: dropHeader;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 0.75s; }
+  /* line 179, portfolio/sass/styles.scss */
+  header ul {
+    border: 5px solid #FFFFFF;
+    display: inline-block;
+    font-family: "brlnsdb";
+    font-size: 1.25em;
+   background: #000000;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px; }
+  /* line 193, portfolio/sass/styles.scss */
+  header li {
+    display: inline-block; }
+  /* line 197, portfolio/sass/styles.scss */
+  header a {
+    display: block;
+font-variant: small-caps; 
+    color: #fff;
+    padding: 10px; }
+    /* line 202, portfolio/sass/styles.scss */
+    header a:hover {
+      color: black;
+      text-decoration: none;
+      background: #eee;
+      border-radius: 4px; }
+    /* line 209, portfolio/sass/styles.scss */
+    header a:focus {
+      color: #fff;
+      text-decoration: none; }
+  /* line 215, portfolio/sass/styles.scss */
+  header.active {
+    display: block; }
+  /* line 219, portfolio/sass/styles.scss */
+  header.sticky {
+    position: fixed;
+    z-index: 999; }
+
+/* line 226, portfolio/sass/styles.scss */
+#menu.active {
+  display: block; }
+
+/* line 231, portfolio/sass/styles.scss */
+#mobile-menu-open {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #fff;
+  font-size: 1.5em;
+  z-index: 20;
+  padding: 0 7px;
+  border-radius: 4px;
+  background: #2f90a7; }
+
+/* line 245, portfolio/sass/styles.scss */
+#mobile-menu-close {
+  display: none;
+  text-align: right;
+  width: 100%;
+  background: #2f90a7;
+  font-size: 1.5em;
+  padding-right: 15px;
+  padding-top: 10px;
+  cursor: pointer;
+  color: #fff; }
+  /* line 256, portfolio/sass/styles.scss */
+  #mobile-menu-close span {
+    font-size: 0.5em;
+    text-transform: uppercase; }
+  /* line 261, portfolio/sass/styles.scss */
+  #mobile-menu-close i {
+    vertical-align: middle; }
+
+/* line 266, portfolio/sass/styles.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 50px 0;
+  background-color: #fff; }
+
+/* line 275, portfolio/sass/styles.scss */
+.content-wrap {
+  padding-bottom: 80px;
+  /* Footer height */ }
+
+/* line 279, portfolio/sass/styles.scss */
+.page-container {
+  position: relative;
+  min-height: 100vh; }
+
+/* line 284, portfolio/sass/styles.scss */
+.copyright {
+  font-family: 'brlnsdb';
+  padding-top: 15px; }
+  /* line 287, portfolio/sass/styles.scss */
+  .copyright p {
+    font-family: 'brlnsdb';
+    margin: 0;
+    color: #fff; }
+.copyright p a {
+font-family: 'brlnsdb';
+}
+
+/* line 293, portfolio/sass/styles.scss */
+.top {
+  text-align: center; }
+  /* line 296, portfolio/sass/styles.scss */
+  .top span {
+    cursor: pointer;
+    display: block;
+    margin: 15px auto 0 auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid #a01810;
+    text-align: center; }
+  /* line 307, portfolio/sass/styles.scss */
+  .top i {
+    color: #a01810; }
+
+/* line 312, portfolio/sass/styles.scss */
+.stackicon {
+  background: none; }
+
+/* line 316, portfolio/sass/styles.scss */
+.stackicon:hover {
+  background: #3DFF12; }
+
+/* line 319, portfolio/sass/styles.scss */
+.social {
+  text-align: right; }
+  /* line 322, portfolio/sass/styles.scss */
+  .social ul {
+    margin: 5px 0 0 0;
+    padding: 0; }
+  /* line 327, portfolio/sass/styles.scss */
+  .social li {
+    display: inline-block;
+    font-size: 2.0em;
+    list-style: none; }
+  /* line 333, portfolio/sass/styles.scss */
+  .social a {
+    display: block;
+    color: #000000;
+    padding: 10px; }
+    /* line 338, portfolio/sass/styles.scss */
+    .social a:hover {
+      color: #28FF07; }
+
+/* line 344, portfolio/sass/styles.scss */
+.layer {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 353, portfolio/sass/styles.scss */
+.btn-rounded-white {
+  display: inline-block;
+  color: #fff;
+  padding: 15px 25px;
+  border: 3px solid #fff;
+  border-radius: 30px;
+  transition: 0.5s ease all; }
+  /* line 361, portfolio/sass/styles.scss */
+  .btn-rounded-white:hover {
+    color: #000000;
+    background: #fff;
+    text-decoration: none; }
+
+/* line 368, portfolio/sass/styles.scss */
+.shadow {
+  box-shadow: 10px 10px #2f90a7; }
+
+/* line 372, portfolio/sass/styles.scss */
+.shadow-large {
+  box-shadow: -10px 10px #039dfc; }
+
+/* line 376, portfolio/sass/styles.scss */
+.heading {
+  position: relative;
+  display: inline-block;
+  font-family: "brlnsdb";
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0 100px 30px 0; }
+  /* line 384, portfolio/sass/styles.scss */
+  .heading:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    height: 1px;
+    width: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #000000; }
+
+/* line 397, portfolio/sass/styles.scss */
+.background-alt {
+  background: #ffffff; }
+
+/*
+    --------------------------
+    ----- 4. Lead Styles -----
+    --------------------------
+*/
+/* line 407, portfolio/sass/styles.scss */
+#lead {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 1080px;
+  background-image: url("../images/web-design-blog.png");
+  background-size: cover;
+  padding: 15px;
+  overflow: hidden; }
+
+/* line 418, portfolio/sass/styles.scss */
+#lead-content {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+  /* line 426, portfolio/sass/styles.scss */
+  #lead-content h1, #lead-content h2 {
+    margin: 0; }
+  /* line 430, portfolio/sass/styles.scss */
+  #lead-content h1 {
+    color: #fff;
+    font-family: "brlnsdb";
+    font-weight: 900;
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 0.9em; }
+  /* line 440, portfolio/sass/styles.scss */
+  #lead-content h2 {
+    color: #fff;
+    font-family: "brlnsdb";
+    font-weight: 500;
+    font-size: 2.25em;
+    margin-bottom: 15px; }
+
+/* line 449, portfolio/sass/styles.scss */
+#lead-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+/* line 461, portfolio/sass/styles.scss */
+#lead-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  bottom: 15px;
+  color: #fff; }
+  /* line 471, portfolio/sass/styles.scss */
+  #lead-down span {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid #404040;
+    text-align: center; }
+  /* line 482, portfolio/sass/styles.scss */
+  #lead-down i {
+    animation: pulsate 1.5s ease;
+    animation-iteration-count: infinite;
+    padding-top: 5px; }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1, 1); }
+  50% {
+    transform: scale(1.2, 1.2); }
+  100% {
+    transform: scale(1, 1); } }
+/*
+    ---------------------------
+    ----- 5. About Styles -----
+    ---------------------------
+*/
+/* line 509, portfolio/sass/styles.scss */
+#about {
+  background-image: url("../images/about.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  padding: 6px 15px; }
+  /* line 516, portfolio/sass/styles.scss */
+  #about h2 {
+    color: #000; }
+  /* line 521, portfolio/sass/styles.scss */
+  #about p {
+    color: #000;
+    margin: 0; }
+
+/* line 527, portfolio/sass/styles.scss */
+#abtimg {
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 10%;
+  width: 100%;
+  height: auto; }
+
+/*
+    --------------------------------
+    ----- 6. Experience Styles -----
+    --------------------------------
+*/
+/* line 541, portfolio/sass/styles.scss */
+#experience {
+  background-image: url("../images/experience.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  padding: 50px 15px;
+  text-align: center; }
+  /* line 550, portfolio/sass/styles.scss */
+  #experience h2 {
+    color: #FFFFFF; }
+
+/* line 555, portfolio/sass/styles.scss */
+#experience-timeline {
+  margin: 30px auto 0 auto;
+  position: relative;
+  max-width: 1250px; }
+  /* line 560, portfolio/sass/styles.scss */
+  #experience-timeline:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 303px;
+    right: auto;
+    height: 100%;
+    width: 6px;
+    background: #000000;
+    z-index: 0; }
+  /* line 573, portfolio/sass/styles.scss */
+  #experience-timeline:after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 40px;
+    background: #000000;
+    background: linear-gradient(to bottom, #000000, rgba(255, 255, 255, 0));
+    top: 100%;
+    left: 303px; }
+
+/* line 585, portfolio/sass/styles.scss */
+.vtimeline-content {
+  margin-left: 350px;
+  background: #000;
+  border: 1px solid #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 15px 15px 10px #000;
+  text-align: left; }
+  /* line 594, portfolio/sass/styles.scss */
+  .vtimeline-content h3 {
+    font-size: 1.5em;
+    font-family: "brlnsdb";
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    margin: 0; }
+  /* line 604, portfolio/sass/styles.scss */
+  .vtimeline-content h4 {
+    font-family: "brlnsdb";
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #FFFFFF;
+    margin: 0 0 15px 0; }
+  /* line 612, portfolio/sass/styles.scss */
+  .vtimeline-content p {
+    color: #fff;
+    font-size: 0.9em;
+    margin: 0; }
+  /* line 618, portfolio/sass/styles.scss */
+  .vtimeline-content li {
+    color: #fff; }
+
+/* line 623, portfolio/sass/styles.scss */
+.vtimeline-point {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  margin-bottom: 30px; }
+
+/* line 630, portfolio/sass/styles.scss */
+.vtimeline-icon {
+  position: relative;
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  background: #000000;
+  border-radius: 50%;
+  float: left;
+  z-index: 99;
+  margin-left: 280px; }
+  /* line 641, portfolio/sass/styles.scss */
+  .vtimeline-icon i {
+    display: block;
+    font-size: 2em;
+    margin-top: 10px; }
+
+/* line 648, portfolio/sass/styles.scss */
+.vtimeline-date {
+  width: 200px;
+  text-align: right;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: "brlnsdb";
+  font-weight: bolder;
+  color: #fff; }
+
+/*
+    -------------------------------
+    ----- 7. Education Styles -----
+    -------------------------------
+*/
+/* line 665, portfolio/sass/styles.scss */
+#education {
+  background-image: url("../images/education.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 50px 15px 20px 15px;
+  text-align: center; }
+  /* line 672, portfolio/sass/styles.scss */
+  #education h2 {
+    color: #000;
+    margin-bottom: 50px; }
+
+/* line 678, portfolio/sass/styles.scss */
+.education-block {
+margin-top:1%;
+  max-width: 450px;
+  margin: 0 auto 30px 100px;
+  background-color: #000000;
+  padding: 25px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px black;
+  text-align: left; }
+  /* line 688, portfolio/sass/styles.scss */
+  .education-block h3 {
+    font-weight: 500;
+    float: left;
+    margin: 0;
+    color: #2f90a7; }
+  /* line 695, portfolio/sass/styles.scss */
+  .education-block span {
+    color: #fff;
+    float: right; }
+  /* line 700, portfolio/sass/styles.scss */
+  .education-block h4 {
+    color: #fff;
+    clear: both;
+    font-weight: 500;
+    margin: 0 0 15px 0; }
+  /* line 707, portfolio/sass/styles.scss */
+  .education-block p, .education-block ul {
+    margin: 0;
+    color: #fff;
+    font-size: 0.9em; }
+  /* line 713, portfolio/sass/styles.scss */
+  .education-block ul {
+    padding: 0 0 0 15px; }
+
+/*
+    -------------------------------
+    ----- 8. Project Styles -----
+    -------------------------------
+*/
+/* line 724, portfolio/sass/styles.scss */
+#projects {
+  padding: 100px 15px;
+  text-align: center;
+  background-image: url("../images/projects.png");
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat; }
+  /* line 731, portfolio/sass/styles.scss */
+  #projects h2 {
+    color: #fff;
+    margin-bottom: 50px; }
+
+/* line 737, portfolio/sass/styles.scss */
+.project {
+  position: relative;
+  max-width: 999px;
+  margin: 0 auto 30px -200px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 5px; }
+
+/* line 746, portfolio/sass/styles.scss */
+.project-image {
+  border: 1px #000000 solid;
+  float: left;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px; }
+
+/* line 753, portfolio/sass/styles.scss */
+.project-image img {
+  width: 300px;
+  height: auto; }
+
+/* line 758, portfolio/sass/styles.scss */
+.project-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 300px;
+  padding: 45px;
+  border-radius: 5px; }
+  /* line 766, portfolio/sass/styles.scss */
+  .project-info h3 {
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 15px 0; }
+  /* line 773, portfolio/sass/styles.scss */
+  .project-info p {
+    color: #000;
+    margin: 0 0 15px 0;
+    font-size: 0.7em; }
+
+/* line 781, portfolio/sass/styles.scss */
+.no-image .project-info {
+  position: relative;
+  margin: 0;
+  padding: 30px 15px;
+  transform: none; }
+
+/* line 789, portfolio/sass/styles.scss */
+#more-projects {
+  display: none; }
+
+/*
+    -------------------------------
+    ----- 9. Skills Styles -----
+    -------------------------------
+*/
+/* line 799, portfolio/sass/styles.scss */
+#skills {
+  padding: 50px 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  background-image: url("../images/skills.png");
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat; }
+  /* line 809, portfolio/sass/styles.scss */
+  #skills h2 {
+    color: #000;
+    margin-bottom: 50px; }
+  /* line 814, portfolio/sass/styles.scss */
+
+#skills h3 {
+    text-decoration: underline; 
+    font-family:'brlnsdb'; 
+    margin-bottom:2%;
+    font-size:2.2em; 
+    font-weight:bolder
+}  
+
+#skills ul {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px; }
+  /* line 821, portfolio/sass/styles.scss */
+  #skills li {
+    font-family:'brlnsdb';
+    display: inline-block;
+    margin: 7px;
+    padding: 5px 10px;
+    color: #fff;
+    background: #a01810;
+    list-style: none;
+    border: 6px solid #000000;
+    border-radius: 5px;
+    cursor: default;
+    font-size: 1.2em; }
+
+/*
+    -------------------------------
+    ----- 10. Contact Styles -----
+    -------------------------------
+*/
+/* line 840, portfolio/sass/styles.scss */
+#contact {
+  padding: 50px 15px;
+  background-color: #a01810;
+  background-image: url("../images/contact.png");
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  text-align: center; }
+  /* line 849, portfolio/sass/styles.scss */
+  #contact h1 {
+    margin-top: 20%; }
+  /* line 852, portfolio/sass/styles.scss */
+  #contact h2 {
+    margin: 50px 0 15px 0;
+    color: #fff;
+    font-weight: 500; }
+
+/* line 859, portfolio/sass/styles.scss */
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto; }
+  /* line 863, portfolio/sass/styles.scss */
+  #contact-form input, #contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px #fff solid;
+    margin-bottom: 10px;
+    background: black;
+    color: #fff;
+    transition: 0.5s ease all; }
+    /* line 75, portfolio/sass/styles.scss */
+    #contact-form input::-webkit-input-placeholder, #contact-form textarea::-webkit-input-placeholder {
+      color: #fff; }
+    /* line 79, portfolio/sass/styles.scss */
+    #contact-form input:-moz-placeholder, #contact-form textarea:-moz-placeholder {
+      color: #fff;
+      opacity: 1; }
+    /* line 84, portfolio/sass/styles.scss */
+    #contact-form input::-moz-placeholder, #contact-form textarea::-moz-placeholder {
+      color: #fff;
+      opacity: 1; }
+    /* line 89, portfolio/sass/styles.scss */
+    #contact-form input:-ms-input-placeholder, #contact-form textarea:-ms-input-placeholder {
+      color: #fff; }
+    /* line 877, portfolio/sass/styles.scss */
+    #contact-form input:focus, #contact-form textarea:focus {
+      outline: none;
+      background: black; }
+  /* line 883, portfolio/sass/styles.scss */
+  #contact-form textarea {
+    height: 150px;
+    resize: none; }
+  /* line 888, portfolio/sass/styles.scss */
+  #contact-form button {
+    display: block;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    padding: 5px 10px;
+    border: none;
+    color: #000000;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 0.5s ease all; }
+    /* line 900, portfolio/sass/styles.scss */
+    #contact-form button:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+/*
+    ---------------------------------------
+    ----- 11. Optional Section Styles -----
+    ---------------------------------------
+*/
+/* line 912, portfolio/sass/styles.scss */
+.optional-section {
+  padding: 50px 15px;
+  text-align: center;
+  border-top: 1px solid #000000; }
+  /* line 917, portfolio/sass/styles.scss */
+  .optional-section h2 {
+    color: #000; }
+
+/* line 922, portfolio/sass/styles.scss */
+.optional-section-block {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  padding: 15px;
+  border: 1px solid #000000;
+  background: #fff;
+  text-align: left; }
+  /* line 930, portfolio/sass/styles.scss */
+  .optional-section-block h3 {
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: #000; }
+  /* line 936, portfolio/sass/styles.scss */
+  .optional-section-block h4 {
+    color: #000;
+    clear: both;
+    font-weight: 500;
+    margin: 0 0 15px 0; }
+  /* line 943, portfolio/sass/styles.scss */
+  .optional-section-block p, .optional-section-block ul {
+    margin: 0 0 15px 0;
+    color: #000;
+    font-size: 0.9em; }
+  /* line 949, portfolio/sass/styles.scss */
+  .optional-section-block ul {
+    padding: 0 0 0 15px; }
+
+/*
+    ---------------------------------------
+    ----- 12. CSS Animation Snippets  -----
+    ---------------------------------------
+*/
+/* line 959, portfolio/sass/styles.scss */
+.row {
+  margin-left: 0;
+  max-width: 1450px;
+  padding: 10px; }
+
+/* line 964, portfolio/sass/styles.scss */
+.card-container {
+  cursor: pointer;
+  display: inline-block;
+  height: 240px;
+  perspective: 600;
+  position: relative;
+  width: 460px; }
+
+/* line 972, portfolio/sass/styles.scss */
+.card {
+  width: 460px;
+  height: auto;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1.5s ease-in-out;
+  -webkit-transition: all 1.5s ease-in-out; }
+
+/* line 981, portfolio/sass/styles.scss */
+.card img {
+  width: 460px;
+  height: 240px;
+  border: 10px outset #fff;
+  border-radius: 20px; }
+
+/* line 987, portfolio/sass/styles.scss */
+.card:hover {
+  transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  /* IE9 */
+  -webkit-transform: rotateY(180deg);
+  /* Safari */ }
+
+/* line 992, portfolio/sass/styles.scss */
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  position: absolute;
+  overflow: hidden;
+  width: 460px;
+  height: 240px; }
+
+/* line 1000, portfolio/sass/styles.scss */
+.card .back {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  line-height: 14px;
+  text-align: center;
+  transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg); }
+
+/* line 1012, portfolio/sass/styles.scss */
+.card .back h4 {
+  font-size: 1.5em;
+  margin-bottom: -2%;
+  color: white;
+  font-family: lato; }
+/* line 1018, portfolio/sass/styles.scss */
+.card .back p {
+  font-size: 0.9em;
+  color: white;
+  margin-bottom: -1%;
+  font-family: lato; }
+/* line 1025, portfolio/sass/styles.scss */
+.card .back a {
+  color: red;
+  font-size: 1.1em;
+  font-family: "brlnsdb"; }
+/* line 1032, portfolio/sass/styles.scss */
+.card .back strong {
+  color: orangered;
+  font-weight: bolder; }
+/* line 1037, portfolio/sass/styles.scss */
+.card .back p.icons {
+  margin-top: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 2.8em; }
+
+/*
+    -----------------------------
+    ----- 13. Media Queries -----
+    -----------------------------
+*/
+@media only screen and (min-width: 993px) {
+  /* line 1054, portfolio/sass/styles.scss */
+  .social ul {
+    margin-right: 40%; }
+
+  /* line 1059, portfolio/sass/styles.scss */
+  #about h1 {
+    display: none; }
+
+  /* line 1063, portfolio/sass/styles.scss */
+  #experience h1 {
+    display: none; }
+
+  /* line 1067, portfolio/sass/styles.scss */
+  #education h1 {
+    display: none; }
+
+  /* line 1071, portfolio/sass/styles.scss */
+  #projects h1 {
+    display: none; }
+
+  /* line 1075, portfolio/sass/styles.scss */
+  #skills h1 {
+    display: none; }
+
+  /* line 1079, portfolio/sass/styles.scss */
+  #contact h1 {
+    display: none; } }
+@media only screen and (max-width: 750px) {
+  /* line 1088, portfolio/sass/styles.scss */
+  #experience-timeline:before, #experience-timeline:after {
+    left: 23px; }
+
+  /* line 1096, portfolio/sass/styles.scss */
+  .vtimeline-date {
+    width: auto;
+    text-align: left;
+    position: relative;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: 40px; }
+
+  /* line 1105, portfolio/sass/styles.scss */
+  .vtimeline-icon {
+    margin-left: 0; }
+
+  /* line 1109, portfolio/sass/styles.scss */
+  .vtimeline-content {
+    margin-right: 30px;
+    margin-left: 40px; } }
+@media only screen and (max-width: 992px) {
+  /* line 1118, portfolio/sass/styles.scss */
+  .container {
+    width: 100%; }
+
+  /* line 1122, portfolio/sass/styles.scss */
+  .jon {
+    margin-top: 10%;
+    width: 400px;
+    height: auto; }
+
+  /* line 1128, portfolio/sass/styles.scss */
+  #experience-timeline {
+    width: 100%; }
+
+  /* line 1132, portfolio/sass/styles.scss */
+  .education-block {
+    max-width: 992px;
+    width: 100%;
+    margin-right: 40px;
+    left: 0; }
+
+  /* line 1139, portfolio/sass/styles.scss */
+  .row {
+    width: 100%;
+    max-width: 992px; }
+
+  /* line 1144, portfolio/sass/styles.scss */
+  #lead {
+    height: auto;
+    min-height: auto;
+    max-height: auto;
+    padding: 100px 15px; }
+
+  /* line 1151, portfolio/sass/styles.scss */
+  #lead-content {
+    width: 100%;
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto; }
+    /* line 1158, portfolio/sass/styles.scss */
+    #lead-content h1 {
+      font-size: 3em; }
+    /* line 1162, portfolio/sass/styles.scss */
+    #lead-content h2 {
+      font-size: 1.75em; }
+
+  /* line 1167, portfolio/sass/styles.scss */
+  #projects {
+    width: auto;
+    background-image: none;
+    background-color: #a01810; }
+
+  /* line 1174, portfolio/sass/styles.scss */
+  #contact {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: auto;
+    background-image: none;
+    background-color: #a01810; }
+
+  /* line 1183, portfolio/sass/styles.scss */
+  #skills {
+    width: 100%;
+    background-image: none;
+    background-color: #fff; }
+
+  /* line 1189, portfolio/sass/styles.scss */
+  #experience {
+    width: auto;
+    background-image: none;
+    background-color: #a01810; }
+
+  /* line 1196, portfolio/sass/styles.scss */
+  #education {
+    width: auto;
+    background-image: none;
+    background-color: #fff; }
+
+  /* line 1203, portfolio/sass/styles.scss */
+  #about {
+    margin-left: 0px;
+    width: auto;
+    background-image: none;
+    background-color: #fff;
+    text-align: center; }
+    /* line 1210, portfolio/sass/styles.scss */
+    #about p {
+      left: 0;
+      text-align: left; }
+
+  /* line 1216, portfolio/sass/styles.scss */
+  #about h1 {
+    color: #a01810; }
+
+  /* line 1220, portfolio/sass/styles.scss */
+  #experience h1 {
+    color: #FFFFFF; }
+
+  /* line 1224, portfolio/sass/styles.scss */
+  #education h1 {
+    color: #a01810; }
+
+  /* line 1228, portfolio/sass/styles.scss */
+  #projects h1 {
+    color: #FFFFFF; }
+
+  /* line 1232, portfolio/sass/styles.scss */
+  #skills h1 {
+    color: #a01810; }
+
+  /* line 1236, portfolio/sass/styles.scss */
+  #contact h1 {
+    color: #FFFFFF; } }
+@media only screen and (max-width: 768px) {
+  /* line 1245, portfolio/sass/styles.scss */
+  .jon {
+    margin-top: 10%;
+    width: 300px;
+    height: auto; }
+
+  /* line 1251, portfolio/sass/styles.scss */
+  header {
+    position: fixed;
+    display: none;
+    z-index: 999;
+    animation: none;
+    bottom: 0;
+    height: 100%; }
+
+  /* line 1260, portfolio/sass/styles.scss */
+  #mobile-menu-open, #mobile-menu-close {
+    display: block; }
+
+  /* line 1264, portfolio/sass/styles.scss */
+  #menu {
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%; }
+    /* line 1271, portfolio/sass/styles.scss */
+    #menu li {
+      display: block;
+      margin-bottom: 10px; }
+    /* line 1276, portfolio/sass/styles.scss */
+    #menu a {
+      font-variant: small-caps; }
+
+  /* line 1281, portfolio/sass/styles.scss */
+  #lead-content {
+    width: 100%; }
+    /* line 1284, portfolio/sass/styles.scss */
+    #lead-content h1 {
+      font-size: 2em; }
+    /* line 1288, portfolio/sass/styles.scss */
+    #lead-content h2 {
+      font-size: 1.3em; }
+    /* line 1292, portfolio/sass/styles.scss */
+    #lead-content a {
+      padding: 10px 20px; }
+
+  /* line 1297, portfolio/sass/styles.scss */
+  #lead-down {
+    display: none; }
+
+  /* line 1301, portfolio/sass/styles.scss */
+  #education {
+    background-image: none;
+    background-color: #FFFFFF; }
+
+  /* line 1307, portfolio/sass/styles.scss */
+  #contact {
+    margin-top: 10%; }
+
+  /* line 1311, portfolio/sass/styles.scss */
+  .education-block {
+    margin-left: 0px; }
+    /* line 1314, portfolio/sass/styles.scss */
+    .education-block h3, .education-block span {
+      float: none; }
+
+  /* line 1319, portfolio/sass/styles.scss */
+  footer {
+    max-height: 200px; }
+
+  /* line 1323, portfolio/sass/styles.scss */
+  .content-wrap {
+    padding-bottom: 200px; }
+
+  /* line 1327, portfolio/sass/styles.scss */
+  .row {
+    margin-left: 0;
+    width: auto;
+    margin-bottom: 10%;
+    padding: 10px; }
+
+  /* line 1333, portfolio/sass/styles.scss */
+  .card-container {
+    cursor: pointer;
+    display: inline-block;
+    perspective: 600;
+    position: relative;
+    width: 400px; }
+
+  /* line 1340, portfolio/sass/styles.scss */
+  .card {
+    width: 400px;
+    height: 204px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1.5s ease-in-out;
+    -webkit-transition: all 1.5s ease-in-out; }
+
+  /* line 1349, portfolio/sass/styles.scss */
+  .card img {
+    width: 400px;
+    height: 204px;
+    border: 10px outset #fff;
+    border-radius: 20px; }
+
+  /* line 1355, portfolio/sass/styles.scss */
+  .card:hover {
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
+
+  /* line 1360, portfolio/sass/styles.scss */
+  .card .side {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    position: absolute;
+    overflow: hidden;
+    width: 400px; }
+
+  /* line 1367, portfolio/sass/styles.scss */
+  .card .back {
+    background: #000000;
+    color: white;
+    padding: 20px;
+    line-height: 14px;
+    text-align: center;
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
+
+  /* line 1379, portfolio/sass/styles.scss */
+  .card .back h4 {
+    font-size: 1.5em;
+    margin-bottom: -2%;
+    color: white;
+    font-family: lato; }
+  /* line 1385, portfolio/sass/styles.scss */
+  .card .back p {
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: -1%;
+    font-family: lato; }
+  /* line 1392, portfolio/sass/styles.scss */
+  .card .back a {
+    color: red;
+    font-size: 1.1em;
+    font-family: "brlnsdb"; }
+  /* line 1399, portfolio/sass/styles.scss */
+  .card .back footer {
+    height: 150px;
+    width: 100%;
+    text-align: center; }
+  /* line 1405, portfolio/sass/styles.scss */
+  .card .back .social {
+    text-align: center; } }
+@media only screen and (max-width: 480px) {
+  /* line 1415, portfolio/sass/styles.scss */
+  #projects {
+    padding: 50px 15px;
+    text-align: center;
+    background-color: #ffffff;
+    background-image: none; }
+
+  /* line 1422, portfolio/sass/styles.scss */
+  .social ul {
+    margin: 5px 50px 0 0; }
+
+  /* line 1425, portfolio/sass/styles.scss */
+  .jon {
+    margin-top: 10%;
+    width: 200px;
+    height: auto; }
+
+  /* line 1431, portfolio/sass/styles.scss */
+  .row {
+    margin-left: 0;
+    padding: 10px; }
+
+  /* line 1435, portfolio/sass/styles.scss */
+  .card-container {
+    cursor: pointer;
+    display: inline-block;
+    perspective: 600;
+    position: relative;
+    width: 200px; }
+
+  /* line 1442, portfolio/sass/styles.scss */
+  .card {
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1.5s ease-in-out;
+    -webkit-transition: all 1.5s ease-in-out; }
+
+  /* line 1450, portfolio/sass/styles.scss */
+  .card img {
+    width: 200px;
+    height: 104px;
+    border: 10px outset #fff;
+    border-radius: 20px; }
+
+  /* line 1457, portfolio/sass/styles.scss */
+  .card:hover {
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
+
+  /* line 1462, portfolio/sass/styles.scss */
+  .card .side {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 104px; }
+
+  /* line 1470, portfolio/sass/styles.scss */
+  .card .back {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    line-height: 14px;
+    text-align: center;
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
+
+  /* line 1482, portfolio/sass/styles.scss */
+  .card .back h4 {
+    font-size: 1.5em;
+    margin-bottom: -2%;
+    color: white;
+    font-family: lato; }
+  /* line 1488, portfolio/sass/styles.scss */
+  .card .back p {
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: -1%;
+    font-family: lato; }
+  /* line 1495, portfolio/sass/styles.scss */
+  .card .back a {
+    color: red;
+    font-size: 1.1em;
+    font-family: "brlnsdb"; }
+
+  /* line 1504, portfolio/sass/styles.scss */
+  #lead-content h1 {
+    font-size: 1.5em;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%; }
+  /* line 1511, portfolio/sass/styles.scss */
+  #lead-content h2 {
+    font-size: 1em;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%; }
+  /* line 1518, portfolio/sass/styles.scss */
+  #lead-content a {
+    font-size: 0.9em;
+    padding: 5px 10px; } }
+@media only screen and (max-width: 375px) {
+  /* line 1526, portfolio/sass/styles.scss */
+  .row {
+    margin-left: 0;
+    width: 100%;
+    padding: 0px; }
+
+  /* line 1531, portfolio/sass/styles.scss */
+  .card-container {
+    cursor: pointer;
+    display: inline-table;
+    perspective: 600;
+    position: relative;
+    width: 200px;
+    margin-bottom: -140px; }
+
+  /* line 1539, portfolio/sass/styles.scss */
+  .card {
+    width: auto;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out; }
+
+  /* line 1547, portfolio/sass/styles.scss */
+  .card img {
+    width: 200px;
+    height: 104px;
+    border: 5px outset #fff;
+    border-radius: 10px; }
+
+  /* line 1554, portfolio/sass/styles.scss */
+  .card:hover {
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
+
+  /* line 1559, portfolio/sass/styles.scss */
+  .card .side {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 104px; }
+
+  /* line 1567, portfolio/sass/styles.scss */
+  .card .back {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    line-height: 14px;
+    text-align: center;
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); }
+
+  /* line 1579, portfolio/sass/styles.scss */
+  .card .back h4 {
+    font-size: 1.5em;
+    margin-bottom: -2%;
+    color: white;
+    font-family: lato; }
+  /* line 1585, portfolio/sass/styles.scss */
+  .card .back p {
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: -1%;
+    font-family: lato; }
+  /* line 1592, portfolio/sass/styles.scss */
+  .card .back a {
+    color: red;
+    font-size: 1.1em;
+    font-family: "brlnsdb"; } }
+
+/*# sourceMappingURL=styles.css.map */
